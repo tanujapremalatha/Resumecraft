@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeCraft - Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>ResumeCraft</h1>
+        <p>Create your professional resume in minutes</p>
+    </header>
+
+    <main class="container">
+
+        <!-- LEFT SIDE: INPUT FORM -->
+        <section class="form-section">
+            <h2>Enter Your Details</h2>
+
+            <label>Choose Template</label>
+            <select id="template" oninput="changeTemplate()">
+                <option value="modern">Modern</option>
+                <option value="classic">Classic</option>
+            </select>
+
+            <label>Name</label>
+            <input id="name" placeholder="Enter your full name"
+                   oninput="updateResume()">
+
+            <label>Job Title</label>
+            <input id="job" placeholder="e.g. Web Developer"
+                   oninput="updateResume()">
+
+            <label>Email</label>
+            <input id="email" type="email"
+                   placeholder="your@email.com"
+                   oninput="updateResume()">
+
+            <label>Phone</label>
+            <input id="phone" placeholder="Enter your phone number"
+                   oninput="updateResume()">
+
+            <label>Professional Summary</label>
+            <textarea id="summary"
+                      placeholder="Write a short introduction about yourself..."
+                      oninput="updateResume()"></textarea>
+
+            <label>Education</label>
+            <textarea id="education"
+                      placeholder="Degree, college, graduation year"
+                      oninput="updateResume()"></textarea>
+
+            <label>Skills</label>
+            <textarea id="skills"
+                      placeholder="HTML, CSS, JavaScript..."
+                      oninput="updateResume()"></textarea>
+
+            <label>Work Experience / Projects</label>
+            <textarea id="experience"
+                      placeholder="Describe your work or projects..."
+                      oninput="updateResume()"></textarea>
+
+            <button onclick="downloadResume()">
+                Download Resume as PDF
+            </button>
+        </section>
+
+        <!-- RIGHT SIDE: LIVE RESUME PREVIEW -->
+        <section class="preview-section">
+            <h2>Live Preview</h2>
+
+            <div id="resume" class="resume modern">
+                <h1 id="previewName">Your Name</h1>
+                <h3 id="previewJob">Your Job Title</h3>
+
+                <p id="previewContact">Email | Phone</p>
+
+                <hr>
+
+                <h3>Professional Summary</h3>
+                <p id="previewSummary">Your summary will appear here.</p>
+
+                <h3>Education</h3>
+                <p id="previewEducation">Your education will appear here.</p>
+
+                <h3>Skills</h3>
+                <p id="previewSkills">Your skills will appear here.</p>
+
+                <h3>Experience / Projects</h3>
+                <p id="previewExperience">
+                    Your experience will appear here.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
